@@ -4,6 +4,14 @@
     input {
         display: block;
     }
+
+    body {
+        padding: 2em;
+    }
+
+    div {
+        margin: 1em;
+    }
 </style>
 
 <h1>Petma plugin</h1>
@@ -36,3 +44,15 @@
     <label for="radioButton3" class="radio__button" >Carousel</label>
 
 </div>
+
+<div id="submit-post" class="button button--primary">Submit</div>
+
+<script>
+    document.getElementById('submit-post').onclick = () => {
+        const name = document.getElementById("name").value;
+        const username = document.getElementById("username").value
+        const description = document.getElementById("description").value
+
+        console.log("building my first plugin")
+    }
+</script>
