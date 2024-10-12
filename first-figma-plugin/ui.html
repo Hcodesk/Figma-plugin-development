@@ -29,18 +29,18 @@
 
 <div class="switch">
     <input class="switch__toggle" type="checkbox" id="uniqueId">
-    <label class="switch__label" for="uniqueIdA">Dark Mode</label>
+    <label class="switch__label" for="uniqueId">Dark Mode</label>
 </div>
 
 <div class="radio">
-    <input type="text" id="radioButton1">
+    <input type="text" id="radioButton1" name="variantGroup" value="1">
     <label for="radioButton1" class="radio__button">No image</label>
 
-    <input type="text" id="radioButton2">
+    <input type="text" id="radioButton2" name="variantGroup" value="2">
     <label for="radioButton2" class="radio__button">Single image</label>
 
 
-    <input type="text" id="radioButton3">
+    <input type="text" id="radioButton3" name="variantGroup" value="3">
     <label for="radioButton3" class="radio__button" >Carousel</label>
 
 </div>
@@ -52,7 +52,14 @@
         const name = document.getElementById("name").value;
         const username = document.getElementById("username").value
         const description = document.getElementById("description").value
+        const darkModeState = ddocument.getElementById("dark-mode-on").checked
+        const imageVariant = document.querySelector('input[name="variantGroup"]:checked')
 
         console.log("building my first plugin")
+        console.log(name)
+        console.log(username)
+        console.log(description)
+
+        parent.postMessage({name, username, description, darkModeState,imageVariant}, '*')
     }
 </script>
